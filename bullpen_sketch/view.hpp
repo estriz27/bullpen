@@ -2,9 +2,9 @@
 #define __VIEWS__
 
 #include <Arduino.h>
-#include"person.hpp"
 #include <vector>
-#include <rgb_lcd.h>
+#include "person.hpp"
+#include "rgb_lcd.h"
 #include <stdlib.h>
 #include <WiFi.h>
 
@@ -32,3 +32,4 @@ public:
 
 };
 #endif
+
