@@ -1,3 +1,6 @@
+#ifndef __PERSON__
+#define __PERSON__
+
 #include <Arduino.h>
 #include <stdlib.h>
 
@@ -12,3 +15,5 @@ class Person {
 	void setPresent(bool present);
 	bool getPresent();
 };
+
+#endif

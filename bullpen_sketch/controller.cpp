@@ -2,8 +2,9 @@
 
 
       
-  Controller::Controller :pinButton(pinButton), pinEncoder(pinEncoder), personCount(personCount) {}
-  int cursorPos =0;
+  Controller::Controller(int pinButton,int pinEncoder, int personCount):pinButton(pinButton), pinEncoder(pinEncoder), personCount(personCount), cursorPos(0){
+    pinMode(pinEncoder,INPUT);
+  }
    
   int Controller::isButtonPressed(){
     int state = 0;
@@ -14,19 +15,19 @@
     return state;
     }
 
-  pinMode(pinEncoder,INPUT);
+ 
   
 
-  void handleRotate(){
-    if(digitalRead(pinEncoder1)==HIGH){
+  void Controller::handleRotate(){
+    if(digitalRead(pinEncoder)==HIGH){
       cursorPos++;
       if(cursorPos >= personCount) cursorPos = 0;
     } else {
       cursorPos--;
       if(cursorPos < 0) cursorPos= personCount - 1;
     } 
-
-  int getCursorPos(){
+  }
+  int Controller::getCursorPos(){
     return cursorPos;
   }
 
