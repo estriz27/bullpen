@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 class Person {
-	
+
 	bool present;
 	String name;
-	
-	public: 
+
+	public:
 	Person(String name, bool present): name(name), present(present) {}
 	void togglePresent();
-	void setPresent();
+	void setPresent(bool present);
 	bool getPresent();
 };
