@@ -4,6 +4,7 @@
       
   Controller::Controller(int pinButton,int pinEncoder, int personCount):pinButton(pinButton), pinEncoder(pinEncoder), personCount(personCount), cursorPos(0){
     pinMode(pinEncoder,INPUT);
+    pinMode(pinButton,INPUT);
   }
    
   int Controller::isButtonPressed(){
