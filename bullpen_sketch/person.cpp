@@ -15,4 +15,3 @@ void Person::setPresent(bool present){
 String Person::getName() {
   return name;
 }
-

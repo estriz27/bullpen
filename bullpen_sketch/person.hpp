@@ -6,8 +6,8 @@
 
 class Person {
 
-	bool present;
-	String name;
+  bool present;
+  String name;
 
 	public:
 	Person(String name, bool present=false): name(name), present(present) {}

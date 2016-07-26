@@ -6,14 +6,11 @@
 #include "person.hpp"
 #include "rgb_lcd.h"
 #include <stdlib.h>
-#include <WiFi.h>
+#include <WiFiServer.h>
 
 
 
 class View{
-  char SSID[48];
-  char pwd[48];
-  bool isSSIDReconfiged;
   int status;
   WiFiServer server;
 
@@ -26,7 +23,7 @@ class View{
 
 
 public:
-  View(String SSID, String pwd, const int port,std::vector<Person> inList, std::vector<Person> outList);
+  View(const int port);
   void update(String name, bool isIn,std::vector<Person> inList, std::vector<Person> outList);
 
 
