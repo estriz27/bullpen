@@ -27,15 +27,25 @@ void setup() {
   Serial.begin(115200);
   
   std::vector<Person> p;
-  p.push_back(Person("Larry"));
+  p.push_back(Person("Larry", true));
   p.push_back(Person("Dipesh"));
   p.push_back(Person("Ming"));
   
   s = new State(p);
   c = new Controller(pinButton, pinEncoder, p.size());
   v = new View(ssid, pwd, port, s->getInList(), s->getOutList());
- 
+  
+  std::vector<Person> in = s->getInList();
+  std::vector<Person> out = s->getOutList();
+  
+  for(int i = 0; i != in.size(); i++) {
+      Serial.println(in[i].getName());
+  }
+  for(int i = 0; i != out.size(); i++) {
+      Serial.println(out[i].getName());
+  }
 }
+
 
 void loop() {
   // put your main code here, to run repeatedly:

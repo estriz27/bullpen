@@ -10,10 +10,11 @@ class Person {
 	String name;
 
 	public:
-	Person(String name, bool present): name(name), present(present) {}
+	Person(String name, bool present=false): name(name), present(present) {}
 	void togglePresent();
 	void setPresent(bool present);
 	bool getPresent();
+  String getName();
 };
 
 #endif
