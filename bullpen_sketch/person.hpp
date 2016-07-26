@@ -6,14 +6,15 @@
 
 class Person {
 
-	bool present;
-	String name;
+  bool present;
+  String name;
 
-	public:
-	Person(String name, bool present): name(name), present(present) {}
-	void togglePresent();
-	void setPresent(bool present);
-	bool getPresent();
+  public:
+  Person(String name, bool present=false): name(name), present(present) {}
+  void togglePresent();
+  void setPresent(bool present);
+  bool getPresent();
+  String getName();
 };
 
 #endif
