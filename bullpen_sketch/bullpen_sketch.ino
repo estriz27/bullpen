@@ -55,6 +55,15 @@ void rotate_handler() {
  }
 }
 
+//display local ip
+void printIP() {
+  IPAddress ip = WiFi.localIP();
+  char local_ip[16];
+  sprintf(local_ip,"%d.%d.%d.%d",ip[0],ip[1],ip[2],ip[3]);
+  local_ip[15]= '\0';
+  Serial.println(local_ip);
+}
+
 void setup() {
   // put your setup code here, to run once:
 
@@ -66,7 +75,7 @@ void setup() {
   p.push_back(Person("Ming"));
 
   check_wifi();
-
+  printIP();
   s = new State(p);
   c = new Controller(pinButton, pinEncoder, p.size());
   v = new View(port);
