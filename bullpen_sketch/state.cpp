@@ -11,16 +11,16 @@ std::vector<Person> State::getOutList(){
   std::vector<Person> outList;
   std::remove_copy_if(people.begin(), people.end(), outList.begin(), filterIn);
   return outList;
-  }
+}
   
-bool isIn(unsigned int personIndex){
+bool State::isIn(unsigned int personIndex){
   if (personIndex > people.size()) {
     return false;
   }
   return people[personIndex].getPresent();
 }
 
-void togglePerson(unsigned int personIndex){
+void State::togglePerson(unsigned int personIndex){
   if (personIndex > people.size()) {
     return;
   }

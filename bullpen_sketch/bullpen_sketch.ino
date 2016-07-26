@@ -48,6 +48,14 @@ void wifi_handler() {
     }
 }
 
+//ugly workaround
+void rotate_handler() {
+ if (c != NULL) {
+    c->handleRotate();
+ }
+  
+}
+
 void setup() {
   // put your setup code here, to run once:
 
@@ -74,14 +82,15 @@ void setup() {
       Serial.println(out[i].getName());
   }
   //attach encoder interrupt
+  attachInterrupt(pinEncoder+1,rotate_handler,FALLING);
 }
 
 
 void loop() {
   wifi_handler();
   if(c->isButtonPressed()) {
-    s->togglePresent(c->getCursorPos());
-    v->update();
+    s->togglePerson(c->getCursorPos());
+//    v->update();
   }
  
   

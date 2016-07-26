@@ -11,13 +11,12 @@ class Controller{
         const int pinButton;
         const int pinEncoder;
         unsigned int personCount;
-        int isButtonPressed();
-        int cursorPos;
+        unsigned int cursorPos;
         
         public: 
         Controller(int pinButton, int pinEncoder, unsigned int personCount);
         void handleRotate();
-        void handlePressed();
+        int isButtonPressed();
         unsigned int getCursorPos();
   
 };
