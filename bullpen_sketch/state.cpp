@@ -27,6 +27,14 @@ void State::togglePerson(unsigned int personIndex){
   people[personIndex].togglePresent();
 }
 
+Person* State::getPerson(unsigned int personIndex) {
+ if (personIndex > people.size()) {
+  return new Person("ERROR",false);
+ }
+ return &(people[personIndex]);
+  
+}
+
 bool State::filterIn (Person &p) {
   return p.getPresent();
 }

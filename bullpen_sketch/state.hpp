@@ -15,6 +15,7 @@ public:
   State(std::vector<Person> people):people(people){}
   std::vector<Person> getInList();
   std::vector<Person> getOutList();
+  Person* getPerson(unsigned int personIndex);
   bool isIn(unsigned int personIndex);
   void togglePerson(unsigned int personIndex);//calls togglePresent on person at given index
 

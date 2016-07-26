@@ -45,7 +45,7 @@ void check_wifi() {
 void wifi_handler() {
   if(WiFi.status() != WL_CONNECTED){
       check_wifi();
-    }
+  }
 }
 
 //ugly workaround
@@ -53,7 +53,6 @@ void rotate_handler() {
  if (c != NULL) {
     c->handleRotate();
  }
-  
 }
 
 void setup() {
@@ -70,7 +69,7 @@ void setup() {
 
   s = new State(p);
   c = new Controller(pinButton, pinEncoder, p.size());
-  v = new View(ssid, pwd, port, s->getInList(), s->getOutList());
+  v = new View(port);
   
   std::vector<Person> in = s->getInList();
   std::vector<Person> out = s->getOutList();
@@ -88,10 +87,11 @@ void setup() {
 
 void loop() {
   wifi_handler();
+  int cursorPos = c->getCursorPos();
+  Person* current = s->getPerson(cursorPos);
   if(c->isButtonPressed()) {
-    s->togglePerson(c->getCursorPos());
-//    v->update();
+    current->togglePresent();
   }
+  v->update(current->getName(), current->getPresent(), s->getInList(), s->getOutList());
  
-  
 }
