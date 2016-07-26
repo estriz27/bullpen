@@ -1,15 +1,26 @@
+
 #include "state.hpp"
 
 
 std::vector<Person> State::getInList(){
   std::vector<Person> inList;
-  std::remove_copy_if(people.begin(), people.end(), inList.begin(), filterOut);
+  for (int i = 0; i< people.size(); i++) {
+    if (people[i].getPresent()) {
+      inList.push_back(people[i]);
+    }
+  }
+  //std::remove_copy_if(people.begin(), people.end(), inList.begin(), filterOut);
   return inList;
 }
 
 std::vector<Person> State::getOutList(){
   std::vector<Person> outList;
-  std::remove_copy_if(people.begin(), people.end(), outList.begin(), filterIn);
+    for (int i = 0; i< people.size(); i++) {
+    if (!people[i].getPresent()) {
+      outList.push_back(people[i]);
+    }
+  }
+  //std::remove_copy_if(people.begin(), people.end(), outList.begin(), filterIn);
   return outList;
 }
   
@@ -41,3 +52,4 @@ bool State::filterIn (Person &p) {
 bool State::filterOut(Person &p){
   return !p.getPresent();
 }
+
