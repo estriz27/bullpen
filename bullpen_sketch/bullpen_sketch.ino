@@ -14,8 +14,8 @@ State *s;
 View *v;
 Controller *c;
 
-const char ssid[48] = "AxiomMarketsLLC";
-const char pwd[48] = "@xiomr001z";
+char ssid[48] = "AxiomMarketsLLC";
+char pwd[48] = "@xiomr001z";
 const int port = 8000;
 const int pinButton = 0;  
 const int pinEncoder = 2; 
@@ -29,7 +29,7 @@ void check_wifi() {
     while(true);
   } 
 
-  if( WiFi.firmwareVersion != "1.1.0" ) {
+  if( WiFi.firmwareVersion() != "1.1.0" ) {
     Serial.println("Please upgrade the firmware");
   }
   
@@ -37,7 +37,7 @@ void check_wifi() {
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(ssid);
     // Connect to WPA/WPA2 network. Change this line if using open or WEP network:    
-    WiFi.begin(ssid,psw);
+    WiFi.begin(ssid,pwd);
     delay(1000);
   }    
 }
@@ -73,6 +73,7 @@ void setup() {
   for(int i = 0; i != out.size(); i++) {
       Serial.println(out[i].getName());
   }
+  
 }
 
 
