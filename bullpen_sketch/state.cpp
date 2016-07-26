@@ -13,9 +13,19 @@ std::vector<Person> State::getOutList(){
   return outList;
   }
   
-bool isIn(int personIndex){return true;}
-void togglePerson(int personIndex){return;}
+bool isIn(unsigned int personIndex){
+  if (personIndex > people.size()) {
+    return false;
+  }
+  return people[personIndex].getPresent();
+}
 
+void togglePerson(unsigned int personIndex){
+  if (personIndex > people.size()) {
+    return;
+  }
+  people[personIndex].togglePresent();
+}
 
 bool State::filterIn (Person &p) {
   return p.getPresent();

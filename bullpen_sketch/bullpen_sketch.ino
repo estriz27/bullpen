@@ -24,7 +24,7 @@ const int pinEncoder = 2;
 void check_wifi() {
   // check for the presence of the shield:
   if (WiFi.status() == WL_NO_SHIELD) {
-    Serial.println("WiFi shield not present"); 
+    Serial.println("WiFi shiel-m "d not present"); 
     // don't continue:
     while(true);
   } 
@@ -79,4 +79,7 @@ void setup() {
 
 void loop() {
   wifi_handler();
+  if(v->isButtonPressed()) {
+   // s->;
+  }
 }
