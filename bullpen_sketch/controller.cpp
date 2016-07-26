@@ -27,7 +27,7 @@ void Controller::handleRotate(){
       if(cursorPos < 0) cursorPos= personCount - 1;
     } 
 }
-int Controller::getCursorPos(){
+unsigned int Controller::getCursorPos(){
     return cursorPos;
 }
 
