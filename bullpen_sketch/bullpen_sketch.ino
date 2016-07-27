@@ -14,7 +14,7 @@ State *s;
 View *v;
 Controller *c;
 
-char ssid[48] = "AxiomMarketsLLC";
+char ssid[48] = "Axiom Markets LLC";
 char pwd[48] = "@xiomr001z";
 const int port = 8000;
 const int pinButton = 0;  
@@ -82,10 +82,13 @@ void setup() {
   
   std::vector<Person> in = s->getInList();
   std::vector<Person> out = s->getOutList();
-  
+
+  Serial.println("IN:");
   for(int i = 0; i != in.size(); i++) {
       Serial.println(in[i].getName());
   }
+
+  Serial.println("OUT:");
   for(int i = 0; i != out.size(); i++) {
       Serial.println(out[i].getName());
   }

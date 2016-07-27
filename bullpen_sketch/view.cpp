@@ -1,12 +1,19 @@
 #include "view.hpp"
 
-View::View(const int port):server(port){}
+View::View(const int port):server(port){
+  lcd.begin(16,2);
+  server.begin();
+  lcd.setRGB(0,0,255);
+  lcd.setCursor(0,1);
+  lcd.print("Employee Log");
+  }
 
 void View::update(String name, bool isIn,std::vector<Person> inList, std::vector<Person> outList){
   updateLCD(name, isIn);
   updateHTML(inList, outList);
 }
 void View::updateLCD(String name, bool isIn){
+  lcd.clear();
   lcd.print(name);
   if(isIn){
     lcd.setRGB(BLColorG[0],BLColorG[1],BLColorG[2]);

@@ -21,12 +21,12 @@ void Controller::handleRotate(){
       cursorPos++;
       if(cursorPos >= personCount) cursorPos = 0;
     } else {
-      
       cursorPos--;
       if(cursorPos < 0) cursorPos= personCount - 1;
     } 
+    Serial.println(cursorPos);
 }
-unsigned int Controller::getCursorPos(){
+int Controller::getCursorPos(){
     return cursorPos;
 }
 
