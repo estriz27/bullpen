@@ -7,10 +7,8 @@
 #include <algorithm>
 
 class State{
-  //Has-a array of class Person
+  //Has a vector of class Person
   std::vector<Person> people;
-  static bool filterIn (Person &p);
-  static bool filterOut(Person &p);
 public:
   State(std::vector<Person> people):people(people){}
   std::vector<Person> getInList();

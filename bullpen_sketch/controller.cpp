@@ -24,7 +24,6 @@ void Controller::handleRotate(){
       cursorPos--;
       if(cursorPos < 0) cursorPos= personCount - 1;
     } 
-    Serial.println(cursorPos);
 }
 int Controller::getCursorPos(){
     return cursorPos;

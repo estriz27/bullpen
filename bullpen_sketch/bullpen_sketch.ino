@@ -79,19 +79,7 @@ void setup() {
   s = new State(p);
   c = new Controller(pinButton, pinEncoder, p.size());
   v = new View(port);
-  
-  std::vector<Person> in = s->getInList();
-  std::vector<Person> out = s->getOutList();
 
-  Serial.println("IN:");
-  for(int i = 0; i != in.size(); i++) {
-      Serial.println(in[i].getName());
-  }
-
-  Serial.println("OUT:");
-  for(int i = 0; i != out.size(); i++) {
-      Serial.println(out[i].getName());
-  }
   //attach encoder interrupt
   attachInterrupt(pinEncoder+1,rotate_handler,FALLING);
 }

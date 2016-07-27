@@ -9,7 +9,6 @@ std::vector<Person> State::getInList(){
       inList.push_back(people[i]);
     }
   }
-  //std::remove_copy_if(people.begin(), people.end(), inList.begin(), filterOut);
   return inList;
 }
 
@@ -20,7 +19,6 @@ std::vector<Person> State::getOutList(){
       outList.push_back(people[i]);
     }
   }
-  //std::remove_copy_if(people.begin(), people.end(), outList.begin(), filterIn);
   return outList;
 }
   
@@ -44,12 +42,5 @@ Person* State::getPerson(unsigned int personIndex) {
  }
  return &(people[personIndex]);
   
-}
-
-bool State::filterIn (Person &p) {
-  return p.getPresent();
-}
-bool State::filterOut(Person &p){
-  return !p.getPresent();
 }
 
