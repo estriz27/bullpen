@@ -1,6 +1,5 @@
 #include "controller.hpp"
 
-
 Controller::Controller(int pinButton,int pinEncoder, unsigned int personCount):pinButton(pinButton), pinEncoder(pinEncoder), personCount(personCount), cursorPos(0){
     pinMode(pinEncoder,INPUT);
     pinMode(pinButton,INPUT);

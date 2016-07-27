@@ -1,5 +1,4 @@
 #include <WiFi.h>
-
 #include <rgb_lcd.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,6 +1,4 @@
-
 #include "state.hpp"
-
 
 std::vector<Person> State::getInList(){
   std::vector<Person> inList;
